@@ -101,6 +101,8 @@ export default function UserProfile() {
               {user.address?.suite}, {user.address?.city},{" "}
               {user.address?.zipcode}
             </p>
+
+            {/* Google Map without api key sir */}
             <div className="w-full h-64 rounded-md overflow-hidden mt-2 border border-gray-700">
               <iframe
                 width="100%"
