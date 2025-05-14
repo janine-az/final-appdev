@@ -25,32 +25,10 @@ export default function Register() {
 
   const router = useRouter();
 
-  const onSubmit = async (data) => {
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: `${data.firstName} ${data.lastName}`,
-            email: data.email,
-            phone: data.phone,
-            address: data.address,
-          }),
-        }
-      );
-
-      if (!response.ok) throw new Error("Failed to register user");
-
-      alert("Registration successful");
-      router.push("/login");
-    } catch (error) {
-      console.error("Error during registration:", error);
-      alert("An error occurred during registration");
-    }
+  const onSubmit = (data) => {
+    console.log("Validated data:", data);
+    alert("Registration successful (mock)");
+    router.push("/login");
   };
 
   return (
